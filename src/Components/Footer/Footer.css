@@ -1,0 +1,107 @@
+* {
+  margin: 0; 
+  padding: 0;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+footer {
+  background: black;
+  color: #bbb;
+  line-height: 1.5;
+}
+footer a {
+  text-decoration: none;
+  color: #eee;
+}
+a:hover {
+  text-decoration: underline;
+}
+.ft-title {
+  color: #fff;
+  font-size: 1.375rem;
+  padding-bottom: 0.625rem;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.container {
+  flex: 1;  
+}
+
+.ft-main {
+  padding: 1.25rem 1.875rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.ft-main-item {
+  padding: 1.25rem;
+  min-width: 200px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+}
+input[className='email-subscribe'] {
+  border: 0;
+  border-radius: 12px 0 0 12px;
+  padding: 0.625rem;
+  margin-top: 0.3125rem;
+}
+input[type="submit"] {
+  background-color: #00d188;
+  /* border-radius: 0px 12px 12px 0; */
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+  /* padding: 0.625rem 0.9375rem;
+  margin-top: 0.3125rem; */
+}
+
+.ft-social {
+  padding: 0 1.875rem 1.25rem;
+}
+.ft-social-list {
+  display: flex;
+  justify-content: center;
+  border-top: 1px #777 solid; 
+  padding-top: 1.25rem;
+}
+.ft-social-list li {
+  margin: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.ft-legal {
+  padding: 0.9375rem 1.875rem;
+  background-color: #333;
+}
+.ft-legal-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.ft-legal-list li {
+  margin: 0.125rem 0.625rem;
+  white-space: nowrap;
+}
+
+.ft-legal-list li:nth-last-child(2) {
+  flex: 1; 
+}
+
+@media only screen and (min-width: 477px) {
+  .ft-main {
+      justify-content: space-around;
+  }
+}
+@media only screen and (min-width: 1240px ) {
+  .ft-main {
+      justify-content: space-evenly;
+  }
+}

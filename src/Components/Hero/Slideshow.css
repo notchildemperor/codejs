@@ -1,0 +1,63 @@
+.maincontainer{
+  background: #f6f6f6;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.container{
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.wrapper{
+  display: flex;
+  animation: slide 15s infinite;
+}
+
+@keyframes slide{
+  0%{
+    transform: translateX(0);
+  }
+  16.666%{
+    transform: translateX(0);
+  }
+  33.333%{
+    transform: translateX(-100%);
+  }
+  50%{
+    transform: translateX(-100%);
+  }
+  66.666%{
+    transform: translateX(-200%);
+  }
+  83.333%{
+    transform: translateX(-200%);
+  }
+}
+
+.gambar{
+  width: 50%;
+  height: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .gambar {
+    width: 50%;
+  }
+
+  .maincontainer{
+    height: 500px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .gambar {
+    width: 25%;
+  }
+
+  .maincontainer{
+    height: 600px;
+  }
+}

@@ -1,0 +1,193 @@
+.container-checkout{
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.information-shipping-main{
+    width: 50%;
+    margin-left: 70px;
+}
+
+.contact-information{
+    margin-top: 10px;
+}
+
+.contact-information input{
+    height: 50px;
+    width: 100%;
+    border: none;
+}
+
+.shipping-address{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.name-order{
+    justify-content: space-between;
+    display: flex;
+}
+
+.name-order input{
+    width: 48%;
+    height: 50px;
+    border: none;
+}
+
+.order-information{
+    margin: 0;
+}
+
+.order-information input{
+    border: none;
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+}
+
+.contact-information{
+    display: flex;
+}
+
+
+.detail-address{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.detail-address input{
+    width: 48%;
+    height: 50px;
+    border: none;
+}
+
+.province{
+    justify-content: space-between;
+    display: flex;
+    width: 30%;
+}
+
+.select-province{
+    border: none;
+    height: 30px;
+    border-radius: 0.25rem;
+}
+
+.select-payment{
+    border: none;
+    height: 30px;
+    margin-left: -180px;
+    border-radius: 0.25rem;
+}
+
+
+.btn-shipping{
+    float: right;
+    margin: 20px;
+    border: none;
+    width: 150px;
+    height: 30px;
+    background: #00d188;
+    color: white;
+}
+
+.detail-checkout-right{
+    margin-bottom: 60px;
+    margin-right: 70px;
+}
+
+.rightttt{
+    display: flex;
+    justify-content: space-between;
+}
+
+.in-your-cart{
+    margin-top: 20px;
+    width: 500px;
+    height: 300px;
+    background: white;
+    overflow-y: auto;
+}
+
+.checkout-inside{
+    justify-content: space-between;
+    margin: 20px;
+    margin-top: 20px;
+}
+
+.small-detail-checkout{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+
+.checkout-product-image{
+    width: 30px;
+    height: auto;
+}
+
+.title-checkout-small{
+    font-size: 14px;
+}
+
+.checkout-items-price-total{
+    font-size: 14px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .container-checkout {
+      flex-direction: column;
+    }
+    
+    .information-shipping-main {
+      width: 100%;
+      margin-left: 0;
+    }
+    
+    .detail-checkout-right {
+      margin-right: 0;
+    }
+    
+    .in-your-cart {
+      width: 100%;
+      height: auto;
+      max-height: 300px;
+    }
+
+    .select-province{
+        border: 0.15px solid black;
+        height: 30px;
+        width: 60px;
+        margin-right: 20px;
+        border-radius: 0.25rem;
+    }
+
+    .title-checkout-small{
+        font-size: 12px;
+    }
+    
+    .checkout-items-price-total{
+        font-size: 12px;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .name-order input,
+    .order-information input,
+    .detail-address input {
+      width: 100%; 
+    }
+    
+    .province {
+      width: 100%;
+    }
+    
+    .select-payment {
+      margin: 0;
+    }
+  }
+  

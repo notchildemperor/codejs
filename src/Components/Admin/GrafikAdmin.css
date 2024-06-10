@@ -1,0 +1,109 @@
+.main-grafik-admin{
+    height: 100%;
+}
+
+.main-grafik-admin h1{
+    margin-left: 200px;
+    font-size: 40px;
+}
+
+.right-circle-button{
+    display: flex;
+}
+
+
+.grafik-admin {
+    margin: 20px;
+    max-height: 500px;
+    margin-bottom: 50px;
+}
+
+.circle-admin{
+    margin: 20px;
+    max-height: 500px;
+    margin-bottom: 50px;
+}
+
+.open-upload-product{
+    height: 80px;
+    width: 50%;
+    margin-top: 50px;
+}
+
+.open-upload-product button{
+    width: 50%;
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+.button-upload-product {
+    background-color: #007ACC;
+    outline: 3px #007ACC solid;
+    outline-offset: -3px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 200ms;
+  }
+  
+  .button-upload-product .text {
+    color: white;
+    font-weight: 700;
+    font-size: 1em;
+    transition: 400ms;
+  }
+  
+  .button-upload-product:hover {
+    background-color: transparent;
+  }
+  
+  .button-upload-product:hover .text {
+    color: #007ACC;
+  }
+
+
+
+@media (max-width: 600px) {
+    .grafik-admin {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .circle-admin {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .main-grafik-admin h1{
+        margin-left: 10px;
+        font-size: 40px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+    .grafik-admin {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .circle-admin {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .main-grafik-admin h1{
+        margin-left: 20px;
+        font-size: 40px;
+    }
+}
+
+@media (min-width: 769px) {
+    .grafik-admin {
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+    .circle-admin {
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+    .main-grafik-admin h1{
+        margin-left: 200px;
+        font-size: 40px;
+    }
+}

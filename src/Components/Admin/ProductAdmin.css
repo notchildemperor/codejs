@@ -1,0 +1,66 @@
+.main-upload-product-admin{
+    margin-left: 200px;
+    height: 800px;
+}
+
+.right-page-product-upload{
+    background: white;
+}
+
+.upload-image{
+    width: 30%;
+}
+
+.image-uploaded img{
+    width: 300px;
+    height: auto;
+}
+
+.id-categori-id{
+    width: 60%;
+}
+
+.upload-id{
+    height: 100%;
+}
+
+select{
+    height: 30px;
+    width: 200px;
+}
+
+.input-description{
+    height: 80px;
+    width: 80%;
+    padding-left: 10px;
+}
+
+.input-title{
+    height: 50px;
+    width: 80%;
+    padding-left: 10px;
+}
+
+.input-tags{
+    height: 50px;
+    width: 80%;
+    padding-left: 10px;
+}
+
+.price-diskon{
+    width: 30%;
+}
+
+.input-input-sama{
+    padding-left: 10px;
+    height: 30px;
+    width: 350px;
+}
+
+.upload-button-produk{
+    background: red;
+    color: white;
+    margin-top: 20px;
+    width: 200px;
+    height: 30px;
+}

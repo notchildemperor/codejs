@@ -1,0 +1,129 @@
+:root {
+    --mainFont: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --secfont: Verdana, Geneva, Tahoma, sans-serif;
+    --secondaryColor: #CF0A0A;
+}
+
+.container-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.card-login {
+    width: 100%;
+    max-width: 370px; 
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 5px black;
+    padding: 20px; 
+    color: rgb(0, 0, 0);
+    box-sizing: border-box; 
+    margin: 0 auto;
+}
+
+.card-login h1 {
+    font-family: var(--mainFont);
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.card-login .submitForm {
+    font-family: var(--secfont);
+}
+
+.card-login p {
+    margin-top: 20px;
+    font-family: var(--mainFont);
+}
+
+.card-login p .link {
+    color: var(--secondaryColor);
+    text-decoration: none;
+}
+
+.card-login p .link:hover {
+    cursor: pointer;
+}
+
+.card-login input,
+.card-login textarea {
+    color: rgb(0, 0, 0);
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    background: #B4B4B8;
+    border: none;
+    padding: 6px;
+    box-sizing: border-box; 
+}
+
+.errorrr{
+    margin-bottom: 20px;
+    width: 300px;
+}
+
+.signup{
+    background: white;
+    color: black;
+    font-weight: 600;
+}
+
+button,
+.back {
+    margin-right: 20px;
+    border: none;
+    color: black;
+    background: inherit;
+}
+
+button:hover,
+.back:hover {
+    cursor: pointer;
+    color: var(--secondaryColor);
+}
+.back p a {
+    text-decoration: none;
+}
+
+.submitForm p{
+    margin-top: 30px;
+}
+
+.alert-error{
+    display: flex;
+    justify-content: space-between;
+}
+
+.apaapaapa{
+    display: flex;
+}
+
+.password-input-hide{
+    display: flex;
+    width: 100%;
+}
+
+.bisolid{
+    margin-left: 20px;
+    
+}
+
+@media screen and (max-width: 768px) {
+    .container-login {
+        padding: 0;
+    }
+    .card-login {
+        width: 100%;
+        max-width: 350px; 
+        height: auto;
+        background-color: rgb(255, 255, 255);
+        padding: 20px; 
+        color: rgb(0, 0, 0);
+        box-sizing: border-box; 
+        margin: 0 auto;
+    }
+}

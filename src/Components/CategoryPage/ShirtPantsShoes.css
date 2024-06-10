@@ -1,0 +1,153 @@
+.card-main-shirt{
+    display: flex;
+    margin: 10px;
+    margin-bottom: 300px;
+}
+
+.card-shirt{
+    margin-top: 30px;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.main-card-shirt-main{
+    margin: 20px;
+    width: 250px;
+    transition: all 0.3s ease-out;
+}
+
+
+.main-card-shirt-main:hover{
+    transform: scale(1.01);
+    transition: 0.6s;
+    cursor: pointer;
+}
+
+.image-shirt {
+    border: 5px solid black;
+    border-radius: 20px 20px 0px 0px;
+    overflow: hidden;
+    max-width: 100%;
+    height: 200px;
+}
+
+.image-shirt img{
+    width: 100%;
+    height: auto;
+}
+
+.block-card{
+    border: 5px solid black;
+    border-radius: 0px 0px 20px 20px;
+    color: white;
+    height: 200px;
+    background: #000;
+}
+
+.title-card-shirt{
+    margin: 20px 0 0 20px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.desc-card-shirt{
+    margin: 20px 0 0 20px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    height: 70px;
+    overflow: hidden;
+    font-weight: 400;
+}
+
+.price-shirt{
+    margin: 20px 0 20px 20px;
+    font-weight: 600;
+}
+
+
+.shirt-product {
+    position: relative;
+    display: flex;
+  }
+  
+  .card-main-shirt {
+    flex: 1;
+  }
+  
+  .side-page {
+    z-index: 1;
+    font-size: 12px;
+    margin-top: 160px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: auto;
+    max-width: 250px;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    pointer-events: auto;
+  }
+  
+  .side-page img {
+    width: 100%;
+  }
+  
+  .side-page h1 {
+    font-size: 10px;
+  }
+  
+  .input-search-product{
+    margin-top: 20px;
+  }
+
+@media only screen and (max-width: 768px) {
+    .side-page {
+        margin-top: 65px;
+        width: 50%;
+        height: calc(100vh - 60px); 
+        padding: 10px;
+    }
+
+    .side-page img {
+        width: 64%;
+      }
+    
+    .card-shirt{
+        flex-wrap: wrap;
+        display: flex;
+        width: 100%;
+    }
+
+    .main-card-shirt-main{
+        width: 150px;
+        margin: 5px;
+        margin-bottom: 2px;
+        transition: all 0.3s ease-out;
+    }
+
+    .image-shirt {
+        overflow: hidden;
+        width: auto;
+        height: 130px;
+    }
+
+    .image-shirt img{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .title-card-shirt{
+        max-width: 40%;
+        font-size: 10px;
+        height: 50px;
+    }
+    
+    .price-shirt{
+        width: auto;
+        font-weight: 600;
+        font-size: 12px;
+    }
+    
+}
+

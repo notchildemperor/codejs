@@ -1,0 +1,35 @@
+.shopcategory-banner{
+    display: block;
+    margin: 30px auto;
+    width: 82%;
+}
+
+.shopcategory-products{
+    margin: 20px 170px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 80px;
+}
+
+.shopcategory-loadmore{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 150px auto;
+    width: 233px;
+    height: 60px;
+    border-radius: 75px;
+    background: gainsboro;
+    color: gray;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+    .shopcategory-products{
+        margin: 20px 0px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}

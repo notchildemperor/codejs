@@ -1,0 +1,48 @@
+.update-product {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .update-product h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .update-product form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .update-product form div {
+    margin-bottom: 15px;
+  }
+  
+  .update-product form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .update-product form input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  .update-product form button {
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .update-product form button:hover {
+    background-color: #218838;
+  }
+  

@@ -1,0 +1,119 @@
+.main-dashboard-admin {
+    display: flex;
+  }
+  
+  .side-page-dashboard-admin {
+    width: 210px;
+  }
+  
+  .side-admin {
+    margin-bottom: 20px;
+    font-size: 20px;
+    display: flex;
+  }
+  
+  .right-page-admin {
+    background: #f6f6f6;
+    width: 100%;
+  }
+  
+  .right-page-admin h1 {
+    margin-left: 20px;
+    font-size: 50px;
+  }
+  
+  .top-dashboard-table {
+    background: #6288f7;
+    color: white;
+  }
+  
+  .label-name-top {
+    height: 500px;
+    overflow-x: auto;
+    margin-right: 17px;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+    overflow-y: auto;
+    height: 500px;
+    margin-bottom: 10px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th,
+  td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+  }
+  
+  .image-dashboard {
+    max-width: 60px;
+    max-height: 60px;
+  }
+  
+  .image-dashboard img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .nama-barang-dashboard {
+    width: 200px;
+  }
+  
+  .update-create-dashboard {
+    width: 350px;
+  }
+
+  .password-all-members{
+    max-width: 300px;
+    overflow-x: auto;
+  }
+  
+
+  @media only screen and (max-width: 768px) {
+    .main-dashboard-admin {
+      flex-direction: column;
+    }
+  
+    .side-page-dashboard-admin {
+      width: 100%;
+    }
+  
+    .right-page-admin h1 {
+      font-size: 30px;
+    }
+  
+    .table-container {
+      margin: 10px;
+    }
+  
+    table {
+      display: block;
+      overflow-x: auto;
+    }
+  
+    th,
+    td {
+      white-space: nowrap;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .table-container {
+      margin: 5px;
+    }
+  
+    .side-admin {
+      font-size: 16px;
+    }
+  
+    .right-page-admin h1 {
+      font-size: 24px;
+    }
+  }
+  
