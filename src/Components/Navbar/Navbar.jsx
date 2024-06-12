@@ -1,27 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Navbar.css';
 import { FaShoppingCart, FaBars, FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
 import { HiUser } from "react-icons/hi2";
-import { IoLogoGameControllerB, IoMdSearch } from 'react-icons/io';
+import { IoLogoGameControllerB } from 'react-icons/io';
+import { FaSignOutAlt } from "react-icons/fa";
 import axios from 'axios';
 
 const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [dropdownMenu, setDropdownMenu] = useState(false);
+  const [userDropdownOpen, setUserDropdownOpen] = useState(false);
+  const [cartDropdownOpen, setCartDropdownOpen] = useState(false);
   const location = useLocation();
   const [cartItems, setCartItems] = useState([]);  // state untuk menyimpan item-item dalam keranjang belanja
   const cartUrl = process.env.REACT_APP_BASEURL;
+  const userDropdownRef = useRef(null);
+  const cartDropdownRef = useRef(null);
 
-  //memeriksa status login
+  // Memeriksa status login
   useEffect(() => {
     const token = localStorage.getItem('tokenMember');
     const adminToken = localStorage.getItem('token');
     setIsLoggedIn(!!token || !!adminToken);
   }, []);
 
-  // mengambil data keranjang belanja dari api carts
+  // Mengambil data keranjang belanja dari API carts
   useEffect(() => {
     const fetchCartItems = async () => {
       const memberId = localStorage.getItem('memberId');
@@ -33,7 +37,7 @@ const Navbar = () => {
             }
           });
           const cartData = response.data;
-          // mengatur data keranjang langsung ke state
+          // Mengatur data keranjang langsung ke state
           setCartItems(cartData);
         } catch (err) {
           console.error('failed:', err);
@@ -43,8 +47,12 @@ const Navbar = () => {
     fetchCartItems();
   }, [cartUrl]);
 
-  const handleToggle = () => {   // handler untuk membuka atau menutup menu dropdown
-    setDropdownMenu(!dropdownMenu);
+  const handleToggleUserDropdown = () => {   // handler untuk membuka atau menutup menu dropdown pengguna
+    setUserDropdownOpen(!userDropdownOpen);
+  };
+
+  const handleToggleCartDropdown = () => {   // handler untuk membuka atau menutup menu dropdown keranjang
+    setCartDropdownOpen(!cartDropdownOpen);
   };
 
   const handleLogout = () => {   // handler untuk proses logout pengguna dan menghapus token jika logout
@@ -73,6 +81,22 @@ const Navbar = () => {
   const getActiveMenu = (path) => location.pathname === path ? 'active' : '';  // fungsi untuk menandai menu navigasi yang aktif berdasarkan lokasi saat ini
 
   const totalCartItems = cartItems.length;   // menghitung jumlah total item dalam keranjang belanja
+
+  const handleClickOutside = (event) => {
+    if (userDropdownRef.current && !userDropdownRef.current.contains(event.target)) {
+      setUserDropdownOpen(false);
+    }
+    if (cartDropdownRef.current && !cartDropdownRef.current.contains(event.target)) {
+      setCartDropdownOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className='main-main-navbar'>
@@ -112,17 +136,17 @@ const Navbar = () => {
             {location.pathname === '/shoes' && <hr />}
           </li>
           {isLoggedIn ? (
-            <li className="dropdown">              
-              <button className="dropdown-toggle" onClick={handleToggle} style={{ color: 'white' }}>
+            <li className="dropdown">
+              <button className="dropdown-toggle" onClick={handleToggleUserDropdown} style={{ color: 'white' }}>
                 <HiUser className='icon-user-navbar-h' />
               </button>
-              {dropdownMenu && (
-                <div className="popup" style={{ color: 'white' }}>
-                  <button className="popup-item">
+              {userDropdownOpen && (
+                <div className="popup-left" ref={userDropdownRef} style={{ color: 'white' }}>
+                  <button className="popup-item-left">
                     <Link to="/profile" style={{ textDecoration: 'none', color: 'white' }}>Profile</Link>
                   </button>
-                  <button className="popup-item" onClick={handleLogout}>
-                    <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>Sign Out</Link>
+                  <button className="popup-item-left" onClick={handleLogout}>
+                    <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>Sign Out <FaSignOutAlt /> </Link>
                   </button>
                 </div>
               )}
@@ -133,14 +157,23 @@ const Navbar = () => {
                 {isLoggedIn ? "Logout" : "Login"}
               </Link>
             </li>
+          )}
+          <li className="dropdown">
+            <button className="dropdown-toggle" onClick={handleToggleCartDropdown} style={{ color: 'white' }}>
+              <FaShoppingCart style={{ fontSize: '24px', color: 'white' }} />
+            </button>
+            {cartDropdownOpen && (
+              <div className="popup-right" ref={cartDropdownRef} style={{ color: 'white' }}>
+                <button className="popup-item-right">
+                  <Link to="/cart" style={{ textDecoration: 'none', color: 'white' }}>Cart</Link>
+                </button>
+                <button className="popup-item-right">
+                  <Link to="/history-checkout" style={{ textDecoration: 'none', color: 'white' }}>History Checkout</Link>
+                </button>
+              </div>
             )}
-          <li>
-            <Link className="cart-icon" to="/cart" onClick={toggleSidebar}>
-              {' '}
-              <FaShoppingCart style={{ fontSize: '24px', color: 'white' }} />{' '}
-            </Link>
           </li>
-          {/* menampilkan jumlah total item dalam keranjang */}
+          {/* Menampilkan jumlah total item dalam keranjang */}
           <li className="nav-cart-count">{totalCartItems}</li>
         </ul>
       </div>
@@ -149,4 +182,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
