@@ -22,6 +22,7 @@ import ProductAdmin from './Pages/AdminProduct';
 import UpdateProduct from './Components/Admin/UpdateProduct';
 import UploadProduct from './Pages/UploadAdmin';
 import WhoCheckout from './Components/Admin/WhoCheckout';
+import CheckoutHistory from './Pages/CheckoutHistory';
 import Members from './Components/Admin/Members';
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
             <Route path="/products" element={<Product />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/checkout' element={<Checkout />} />
+            <Route path='/history-checkout' element={<CheckoutHistory/>}/>
             <Route path='/login' element={<LoginSignup />} />
             <Route path='/register' element={<Register />} />
             <Route path='/profile' element={<Profile />} />
