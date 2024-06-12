@@ -21,6 +21,7 @@ const CheckoutItems = () => {
     const [cart_id, setCartId] = useState('');
     const [member_id, setMemberId] = useState('');
     const [total_harga, setTotalHarga] = useState('');
+    const [productId, setProductId] = useState([]);
     const [productNames, setProductNames] = useState([]);
     const [productPrices, setProductPrices] = useState([]);
     const [totalCardAmount, setTotalCardAmount] = useState(0);
@@ -52,8 +53,15 @@ const CheckoutItems = () => {
 
             setProductPrices(selectedProducts.map(product => product.harga));
 
+            setProductId(selectedProducts.map(product => product.produk_id))
+
             const memberId = localStorage.getItem('memberId');
             setMemberId(memberId);
+
+            const userEmail = localStorage.getItem('userEmail');
+            if (userEmail) {
+                setEmail(userEmail);
+            }
         }
     }, [selectedProducts, totalFinal]);
 
@@ -102,7 +110,7 @@ const CheckoutItems = () => {
             province,
             postal_code,
             payment_number,
-            produk_id,
+            produk_id: productId.join(','),
             cart_id,
             member_id,
             total_harga,

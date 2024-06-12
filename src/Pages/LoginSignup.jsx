@@ -14,29 +14,41 @@ const LoginSignup = () => {  // state untuk menyimpan nilai
   const [error, setError] = useState("");
   const loginUrl = process.env.REACT_APP_BASEURL;
 
-  const handleSubmit = async (e) => { //fungsi untuk menangani form submit
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const loginResponse = await axios.post(loginUrl + '/login', { email, password }); //mengirim permintaan post ke api login
-      if (loginResponse.status === 200) { //jika login berhasil, menyimpan tokenMember ke local storage
+      const loginResponse = await axios.post(loginUrl + '/login', { email, password });
+      if (loginResponse.status === 200) {
         const tokenObject = loginResponse.data;
         const tokenString = JSON.stringify(tokenObject);
         localStorage.setItem("tokenMember", tokenString);
-        setTimeout(() =>{ //redirect ke halaman utama setelah 1 detik
-          window.location.href = "/";
-        }, 1000)
-        const membersResponse = await axios.get(loginUrl + '/members', { //mendapatkan data members
-          headers: {
-            Authorization: `Bearer ${tokenObject.access_token}`
+        // Function to fetch paginated member data
+        const fetchMembers = async (page = 1) => {
+          const response = await axios.get(`${loginUrl}/members?page=${page}`, {
+            headers: {
+              Authorization: `Bearer ${tokenObject.access_token}`
+            }
+          });
+          return response.data;
+        };
+   
+        // Loop through paginated data until the member is found or no more pages
+        let memberId = null;
+        let page = 1;
+        let membersData;
+        do {
+          membersData = await fetchMembers(page);
+          const member = membersData.data.find(member => member.email === email);
+          if (member) {
+            memberId = member.id;
+            break;
           }
-        });
-
-        console.log('Members response:', membersResponse);
-
-        const member = membersResponse.data.data.find(member => member.email === email); //menyesuaikan member yang sesuai dengan email untuk login
-        if (member) {
-          const memberId = member.id;
+          page++;
+        } while (membersData.data.length > 0);
+   
+        if (memberId) {
           localStorage.setItem("memberId", memberId);
+          localStorage.setItem('userEmail', email);
           console.log('Member ID:', memberId);
           setTimeout(() => {
             window.location.href = "/";
